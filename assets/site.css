@@ -820,3 +820,23 @@
   .cta-phones a:not([href]), .contact-card a.tnum:not([href]) { cursor: default; }
   .cta-phones a:not([href]):hover { background: rgba(255, 255, 255, .07); }
   .contact-card a.tnum:not([href]):hover { color: var(--deep); }
+
+  /* Explainer video under the key facts */
+  .video { background: #082638; color: #fff; padding: 64px 0; position: relative; overflow: hidden; }
+  .video::before { content: ""; position: absolute; inset: 0; background: radial-gradient(60% 80% at 80% 50%, rgba(14, 143, 168, .28), transparent 70%); pointer-events: none; }
+  .video .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 48px; align-items: center; }
+  .video .eyebrow { color: #7FD6E6; }
+  .video h2 { font: 600 clamp(26px, 3vw, 38px)/1.1 var(--display); letter-spacing: -.02em; margin: 14px 0 14px; }
+  .video-text p { margin: 0 0 24px; color: var(--bubble); font-size: 17px; max-width: 30em; text-align: left; }
+  .video .btn-ghost { background: transparent; color: #fff; border-color: rgba(191, 230, 238, .5); }
+  .video .btn-ghost:hover { border-color: #fff; }
+  .video-lang { display: block; margin-top: 16px; font-size: 13px; color: rgba(191, 230, 238, .7); }
+  .video-lang:empty { display: none; }
+  .video-frame { border-radius: 20px; overflow: hidden; background: #06202f; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .08); }
+  .video-frame video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #06202f; }
+  @media (max-width: 900px) {
+    .video { padding: 44px 0; }
+    .video .wrap { grid-template-columns: 1fr; gap: 24px; }
+    .video-frame { order: -1; }
+    .video-text p { margin-bottom: 18px; }
+  }
