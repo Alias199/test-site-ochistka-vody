@@ -83,6 +83,11 @@
 
 // Header phone numbers: on a desktop a tel: link would open Skype/FaceTime, so they lead to the contacts block;
 // on touch devices they dial.
-if (window.matchMedia && matchMedia('(pointer: coarse)').matches) {
-  document.querySelectorAll('a[data-tel]').forEach(function (a) { a.href = 'tel:' + a.getAttribute('data-tel'); });
-}
+(function () {
+  var touch = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+  document.querySelectorAll('a[data-tel]').forEach(function (a) {
+    if (touch) { a.href = 'tel:' + a.getAttribute('data-tel'); return; }
+    // already inside the contacts block or on the contacts page: nothing to scroll to, show the number as text
+    if (a.closest('#contacts, .contact-card')) a.removeAttribute('href');
+  });
+})();

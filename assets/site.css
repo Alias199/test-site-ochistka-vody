@@ -810,3 +810,13 @@
   /* Current page in the catalog: colour only, no "you are here" badge (it was CSS text, so it escaped translation) */
   .cat a[aria-current="page"]::after { content: none; }
   .cat a[aria-current="page"] { color: var(--muted); pointer-events: none; text-decoration: none; }
+
+  /* QR pair: two cards and one shared note */
+  .cta-qrs { display: grid; grid-template-columns: 156px 156px; gap: 12px; }
+  .cta-qr p b { margin-bottom: 0; }
+  .cta-qrs-note { grid-column: 1 / -1; margin: 0; font-size: 12px; line-height: 1.35; color: var(--bubble); text-align: center; }
+  .contact-card .contact-qr .cta-qrs { grid-template-columns: 156px 156px; }
+  /* phone numbers on a desktop are not links to Skype: inside the contacts block they are plain text */
+  .cta-phones a:not([href]), .contact-card a.tnum:not([href]) { cursor: default; }
+  .cta-phones a:not([href]):hover { background: rgba(255, 255, 255, .07); }
+  .contact-card a.tnum:not([href]):hover { color: var(--deep); }
