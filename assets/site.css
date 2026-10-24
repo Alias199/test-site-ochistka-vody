@@ -754,3 +754,9 @@
     .cta .wrap { grid-template-columns: 1fr; }
     .cta-phones a { font-size: clamp(20px, 4vw, 24px); }
   }
+
+  /* Desktop: the whole page 10% larger (text, spacing, pictures); phones and tablets keep their own sizes */
+  @media (min-width: 1081px) {
+    body { zoom: 1.1; }
+    .side { max-height: calc(100vh / 1.1 - var(--header-h) - 40px); }
+  }
