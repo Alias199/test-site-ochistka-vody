@@ -80,3 +80,9 @@
     document.querySelectorAll('.reveal').forEach(function (n) { n.classList.add('in'); });
   }
 })();
+
+// Header phone numbers: on a desktop a tel: link would open Skype/FaceTime, so they lead to the contacts block;
+// on touch devices they dial.
+if (window.matchMedia && matchMedia('(pointer: coarse)').matches) {
+  document.querySelectorAll('a[data-tel]').forEach(function (a) { a.href = 'tel:' + a.getAttribute('data-tel'); });
+}
