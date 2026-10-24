@@ -784,3 +784,23 @@
   .trust-clients img { height: 26px; width: auto; display: inline-block; vertical-align: middle; margin-right: 6px; filter: grayscale(1); opacity: .75; transition: filter .3s, opacity .3s; }
   .trust-clients:hover img { filter: none; opacity: 1; }
   @media (max-width: 640px) { .trust-clients img { height: 22px; } }
+
+  /* Trust line: centred, logos below the label, text under the logos */
+  .trust-clients { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; margin-top: 48px; }
+  .trust-clients span { margin: 0; }
+  .trust-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px 44px; }
+  .trust-clients img, .trust-logos img { height: 40px; margin: 0; }
+  .trust-clients p { margin: 0; color: var(--muted); font-size: 16px; max-width: 40em; }
+  @media (max-width: 640px) { .trust-logos img { height: 30px; } .trust-logos { gap: 14px 28px; } }
+
+  /* Plainer typography: no decorative ticks and arrows */
+  .trust-item h3::before { content: none; }
+  .device-label::after { content: none; }
+
+  /* Body copy justified with hyphenation, headings balanced */
+  .lead, .service-intro, .trust-head p, .trust-item p, .cta p, .catalog-head p, .aside-note, .tiers p, .flat > p, .empty-note p,
+  .prose p, .prose li, .card .desc, .card-extra p, .contact-card .contact-qr p {
+    text-align: justify; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 7 3 3;
+  }
+  .trust-clients p, .cta-qr p { text-align: center; }
+  h1, h2, h3 { text-wrap: balance; }
