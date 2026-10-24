@@ -767,7 +767,7 @@
   }
 
   /* Contacts page: QR codes next to the phones, not only in the footer block */
-  .contact-card .contact-qr { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; gap: 8px 28px; align-content: center; align-items: start; }
+  .contact-card .contact-qr { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto 1fr; gap: 6px 28px; align-items: start; }
   .contact-card .contact-qr h3 { grid-column: 1; margin: 0; }
   .contact-card .contact-qr p { grid-column: 1; color: var(--muted); font-size: 15px; max-width: 34em; }
   .contact-card .contact-qr .cta-qrs { grid-column: 2; grid-row: 1 / span 2; justify-self: end; align-self: center; }
