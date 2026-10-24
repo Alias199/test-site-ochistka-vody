@@ -779,3 +779,8 @@
   @media (pointer: coarse) {
     .contact-card .contact-qr { display: none; }
   }
+
+  /* Client logos in the trust line */
+  .trust-clients img { height: 26px; width: auto; display: inline-block; vertical-align: middle; margin-right: 6px; filter: grayscale(1); opacity: .75; transition: filter .3s, opacity .3s; }
+  .trust-clients:hover img { filter: none; opacity: 1; }
+  @media (max-width: 640px) { .trust-clients img { height: 22px; } }
