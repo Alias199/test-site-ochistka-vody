@@ -806,3 +806,7 @@
   h1, h2, h3 { text-wrap: balance; }
 
   .nobr { white-space: nowrap; }
+
+  /* Current page in the catalog: colour only, no "you are here" badge (it was CSS text, so it escaped translation) */
+  .cat a[aria-current="page"]::after { content: none; }
+  .cat a[aria-current="page"] { color: var(--muted); pointer-events: none; text-decoration: none; }
